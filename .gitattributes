@@ -1,0 +1,4 @@
+*.fits filter=lfs diff=lfs merge=lfs -text
+*.rmf filter=lfs diff=lfs merge=lfs -text
+*.arf filter=lfs diff=lfs merge=lfs -text
+*.pha filter=lfs diff=lfs merge=lfs -text
