@@ -1,0 +1,21 @@
+- objectName: Crab
+  ra:  83.633212
+  dec: 22.01446
+  xsmodel: phabs*powerlaw
+  xsparam: (0.3, 2.1, 10.0)
+
+  
+- objectName: Cyg X-2
+  ra:  326.171667
+  dec: 38.321667
+  xsmodel: phabs*diskbb
+  xsparam: (0.2, 1.6, 48.0)
+  
+
+- objectName: Sco X-1
+  ra:  244.9794583
+  dec: -15.6402222
+  xsmodel: phabs*diskbb
+  xsparam: (0.3, 1.5, 3570.)
+  
+

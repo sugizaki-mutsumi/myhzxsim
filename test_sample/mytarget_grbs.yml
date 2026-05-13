@@ -1,0 +1,23 @@
+- objectName: GRB1
+  ra:  83.
+  dec: 13.
+  xsmodel: phabs*powerlaw
+  xsparam: (0.3, 1.0, 1.0)
+  lcfile: grb1_lc.fits
+  
+
+- objectName: GRB2
+  ra:  73.
+  dec: 13.
+  xsmodel: phabs*powerlaw
+  xsparam: (0.3, 1.0, 1.0)
+  lcfile: grb2_lc.fits
+  
+
+- objectName: GRB3
+  ra:  83.
+  dec:  3.
+  xsmodel: phabs*powerlaw
+  xsparam: (0.3, 1.0, 1.0)
+  lcfile: grb3_lc.fits
+  

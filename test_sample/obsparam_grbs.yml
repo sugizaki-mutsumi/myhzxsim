@@ -1,0 +1,15 @@
+### Obseravation including Crab
+- obsid: 200000
+  objectName: XRAYSKY
+  tstart: 0.0
+  tstop:  1000.0
+  qparam: -0.58883817,  0.00332964, -0.00195868,  0.80824173
+  #detlist: range(1,17)   # = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+  detlist: [12]   # = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]
+
+  mxmoncat: False
+  rxscat:   False
+  xrb: None
+  nxb: None
+  
+  outdir: DEF  ###  ourdir = obsid in DEF(ault)

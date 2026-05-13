@@ -1,0 +1,38 @@
+###
+###  HZXSIMDIR is replaced with the value of the environment variable $HZXSIMDIR. 
+###
+
+#############################
+##### CALDB information #####
+#############################
+
+## TELDEF
+teldefdir: HZXSIMDIR/refdata/teldef
+teldefver: 20251216v002
+
+### Ancilary response (effective area) 
+arffname: HZXSIMDIR/refdata/hzxarf_withframe_rn0.0nm_imgall.arf
+
+### Response matrix
+rmffname: HZXSIMDIR/refdata/hzx_erosita.rmf
+
+### PSF sigma in mm
+psf_sigma: 0.2
+
+
+### Non X-ray background spectrum
+nxbspecfname: HZXSIMDIR/refdata/fake_bkg_exp1e6s.pha 
+
+### X-ray sky background spectral data in healpix image
+xrbdatfname: HZXSIMDIR/simdb/xrbkg_rayspec_erobin.fits
+
+
+################################
+##### X-ray source catalog #####
+################################
+### MAXI catalog file
+catmxmonfname: HZXSIMDIR/simdb/catmxmon.fits
+catmxmonlcdir: HZXSIMDIR/simdb/mxgsclc
+
+### ROSAT catalog file
+catrxs2fname: HZXSIMDIR/simdb/cat2rxs_plparcut.fits

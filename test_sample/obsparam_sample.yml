@@ -1,0 +1,35 @@
+### Obseravation including Crab
+- obsid: 100000
+  objectName: XRAYSKY
+  tstart: 0.0
+  tstop:  1000.0
+  qparam: -0.58883817,  0.00332964, -0.00195868,  0.80824173
+  detlist: range(1,17)
+  # detlist: [1,7,12,14]  ### run for detid=1,7,12,14
+
+
+  mxmoncat: True
+  rxscat:   True
+  xrb: DEF
+  nxb: DEF
+  
+  outdir: DEF  ###  ourdir = obsid in DEF(ault)
+
+
+### Obseravation including Galactic center
+- obsid: 100001
+  objectName: XRAYSKY
+  tstart: 0.0
+  tstop:  1000.0
+  qparam: -0.82470631,  0.00189276,  0.00301748, -0.56555001
+  detlist: range(1,17)
+
+  mxmoncat: True
+  rxscat:   True
+  xrb: DEF
+  nxb: DEF
+  
+  outdir: DEF  ###  ourdir = obsid in DEF(ault)
+
+   
+   

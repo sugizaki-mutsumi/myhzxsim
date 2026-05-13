@@ -1,5 +1,8 @@
 # myhzxsim
 
+## *Cautions: Descriptions below are mostly under construction*
+<br>
+
 myhzxsim is a simulator of the HiZ-GUNDAM EAGLE (wide-field X-ray monitor) to demonstrate observations of various X-ray objects, taking into account the complex response functions of the Lobster-eye micropore optics (MPO) and CCD imager. <br>
 
 The software code is written entirely in Python and has been tested in the Anaconda Python environment on Mac and Linux (Ubuntu).
@@ -153,7 +156,6 @@ $ ./myhzxsim.py obsparam_crab.yml -s mytarget_grbs.yml -c myhzxsim_myconf.yml
 <br>
 <br>
 
-## ***<span style="color: red">--- Under construction below ---</span>***
 
 ### Description of parameter files
 
