@@ -19,8 +19,8 @@ attrot = telcoord.attquat2rot(qparam)
 
 ### detector TELDEF for unit covering Crab 
 detid = 7
-teldefverid = 2
-teldeffname = hzxsimdir+os.sep+"refdata/teldef/hiz_xm%02d_teldef_20251216v%03d.fits"%(detid, teldefverid)
+teldefver = '20251216v002'
+teldeffname = hzxsimdir+os.sep+"refdata/teldef/hiz_xm%02d_teldef_%s.fits"%(detid, teldefver)
 this_teldef = Teldef(teldeffname) 
 
 detxpix, detypix = telcoord.radec2detpix(ra, dec, attrot, this_teldef)
