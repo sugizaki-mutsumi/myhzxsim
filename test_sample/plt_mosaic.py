@@ -7,12 +7,32 @@ from scipy.spatial.transform import Rotation as R
 import astropy.io.fits as pyfits
 import astropy.wcs as wcs
 from astropy import units as u
+from astropy.coordinates import Angle, SkyCoord
 
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
 
+import yaml
+
 
 import telcoord
+
+### FOV regions
+from teldef import Teldef
+from regions import Regions, PixelRegion, SkyRegion, CircleSkyRegion
+from telfovtool import gen_telfovreg
+
+
+### Draw FOV of detector units 
+DRAW_FOV = True
+#DRAW_FOV = False
+
+### Draw position of target objects
+xraysrcfname = "mytarget_grbs.yml"
+DRAW_GRB = False
+#DRAW_GRB = True
+
+
 
 ### mosaic image dimension
 sky_xsiz = 1200
@@ -36,10 +56,6 @@ obsid = "100000"  ### Crab region
 #obsid = "100001"  ### Galactic center
 dirname = obsid 
 #dirname = obsid+".def"
-
-DRAW_FOV = True
-#DRAW_FOV = False
-
 
 ### get wcs info
 evtfname = dirname+os.sep+"hzx%sxm01.evt"%(obsid)
@@ -109,14 +125,6 @@ overlay[1].set_ticks([0.0]*u.degree)
 #overlay[1].set_axislabel('Galactic Latitude')
 
 
-#figfname = dirname+"_raw.png"
-#figfname = dirname+"a_raw.png"
-#fig.savefig(figfname)
-
-### FOV regions
-from teldef import Teldef
-from regions import Regions, PixelRegion, SkyRegion
-from telfovtool import gen_telfovreg
 
 
 if DRAW_FOV :
@@ -145,9 +153,23 @@ if DRAW_FOV :
             pixreg.plot(ax=ax)
             #pixreg.plot(ax=ax2)
     
-    #figfname = dirname+"a_fov.png"
-    #fig.savefig(figfname)
 
+
+if DRAW_GRB :
+    with open(xraysrcfname) as f :
+        xraysrclist = yaml.safe_load(f)
+        for xraysrc in xraysrclist :
+            objectName = xraysrc["objectName"]
+            ra  = xraysrc["ra"]
+            dec = xraysrc["dec"]
+            sky_center = SkyCoord(ra, dec, unit='deg')
+            sky_radius = Angle(0.5, 'deg')
+            sky_region = CircleSkyRegion(sky_center, sky_radius)
+            pixel_region = sky_region.to_pixel(wcs_mos)
+            pixel_region.plot(color='red')
+            centx = pixel_region.center.x
+            centy = pixel_region.center.y
+            ax.text(centx+10., centy, objectName, color='red')
 plt.ion()
 plt.show()
 

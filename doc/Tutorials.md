@@ -37,6 +37,14 @@ $ python -i plot_lc_grbs.py
 
 
 ```
+### edit plt_mosaic.py
+...
+### Draw position of target objects
+xraysrcfname = "mytarget_grbs.yml"
+#DRAW_GRB = False     ####
+DRAW_GRB = True       ### <-- activate this option
+....
+
 $ python -i plot_mosaic.py
 ```
 ![mosaic_grbs.png](./mosaic_grbs.png)
@@ -69,6 +77,7 @@ $ ./myhzxsim.py obsparam_crab.yml -c myhzxsim_myconf.yml
 
 ### 3. Plot PSF projection 
 ```
+### check two output directories, 100000 and 100000.1st (1st run), exist.
 $ python -i plot_psfprof_crab.py
 ```
 ![psfpro_crab.png](./psfpro_crab.png)
