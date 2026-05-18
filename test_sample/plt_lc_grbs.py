@@ -105,14 +105,7 @@ for igrb in range(ngrbs) :
     vx  = np.arange(nbins)*tbinsize + tbinsize/2.
     vy  = lchist/tbinsize
     vye = np.sqrt(lchist)/tbinsize
-    ax1.errorbar(vx, vy, xerr=tbinsize/2., yerr=vye, fmt='.', ms=3, lw=1, label='Source events including BKG') #velhbins)
-
-    ### NXB
-    lchist, xedges = np.histogram(vtime[vcut_nxb], nbins, (tmin, tmax))
-    vx  = np.arange(nbins)*tbinsize + tbinsize/2.
-    vy  = lchist/tbinsize
-    vye = np.sqrt(lchist)/tbinsize
-    ax1.errorbar(vx, vy, xerr=tbinsize/2., yerr=vye, fmt='.', ms=3, lw=1, label='NXB') #velhbins)
+    ax1.errorbar(vx, vy, xerr=tbinsize/2., yerr=vye, fmt='.', ms=3, lw=1, label='Source events including BKG') 
 
     ### soft X-ray background
     lchist, xedges = np.histogram(vtime[vcut_sxrb], nbins, (tmin, tmax))
@@ -121,8 +114,16 @@ for igrb in range(ngrbs) :
     vye = np.sqrt(lchist)/tbinsize
     ax1.errorbar(vx, vy, xerr=tbinsize/2., yerr=vye, fmt='.', ms=3, lw=1, label='SXRB') 
 
+    ### NXB
+    lchist, xedges = np.histogram(vtime[vcut_nxb], nbins, (tmin, tmax))
+    vx  = np.arange(nbins)*tbinsize + tbinsize/2.
+    vy  = lchist/tbinsize
+    vye = np.sqrt(lchist)/tbinsize
+    ax1.errorbar(vx, vy, xerr=tbinsize/2., yerr=vye, fmt='.', ms=3, lw=1, label='NXB') 
+
     hdul.close()
 
+    
     ### light curve model
     hdul = pyfits.open(lcfname)
     hdu = hdul[1]
